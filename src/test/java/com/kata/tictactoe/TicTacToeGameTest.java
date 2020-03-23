@@ -175,4 +175,13 @@ public class TicTacToeGameTest {
         ticTacToeGame.playTurnAt(1,2);
         assertEquals("Player O is the Winner", ticTacToeGame.playTurnAt(2,2));
     }
+
+    @Test
+    public void playTurnAtShouldReturnXIsWinnerWhenEntireRightToLeftDiagonalIsOccupiedByX() throws PositionAlreadyInUseException {
+        ticTacToeGame.playTurnAt(0,2);
+        ticTacToeGame.playTurnAt(0,1);
+        ticTacToeGame.playTurnAt(1,1);
+        ticTacToeGame.playTurnAt(0,0);
+        assertEquals("Player X is the Winner", ticTacToeGame.playTurnAt(2,0));
+    }
 }

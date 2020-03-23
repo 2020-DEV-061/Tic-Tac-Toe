@@ -17,6 +17,11 @@ public class TicTacToeGame {
         if (isCurrentPlayerWinnerByLeftToRightDiagonal()) {
             return "Player " + currentPlayer + " is the Winner";
         }
+        if ((getPlayerAt(0, 2) == 'X') &&
+                (getPlayerAt(0, 2) == getPlayerAt(1, 1)) &&
+                (getPlayerAt(0, 2) == (getPlayerAt(2, 0)))) {
+            return "Player X is the Winner";
+        }
         return null;
     }
 
