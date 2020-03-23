@@ -14,6 +14,11 @@ public class TicTacToeGame {
         if (isXWinnerByColumn()) {
             return "Player X is the Winner";
         }
+        if ((getPlayerAt(0, 0) == 'O') &&
+                (getPlayerAt(0, 0) == getPlayerAt(1, 0)) &&
+                (getPlayerAt(0, 0) == getPlayerAt(2, 0))) {
+            return "Player O is the Winner";
+        }
         return null;
     }
 
