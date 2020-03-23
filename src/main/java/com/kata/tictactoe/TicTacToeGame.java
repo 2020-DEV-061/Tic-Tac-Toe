@@ -11,7 +11,7 @@ public class TicTacToeGame {
         if (isXWinnerByRow()) {
             return "Player X is the Winner";
         }
-        for (int row = 0; row < 2; row++) {
+        for (int row = 0; row < 3; row++) {
             if ((getPlayerAt(row, 0) == 'O') &&
                     (getPlayerAt(row, 0) == getPlayerAt(row, 1)) &&
                     (getPlayerAt(row, 0) == getPlayerAt(row, 2))) {
