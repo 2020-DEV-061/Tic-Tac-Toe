@@ -5,8 +5,12 @@ public class TicTacToeGame {
     private char currentPlayer;
 
     public void playTurnAt(final int positionX, final int positionY) {
-        currentPlayer = currentPlayer == 'X' ? 'O' : 'X';
+        currentPlayer = getCurrentPlayerToBePlayed();
         gameBoardLayout[positionX][positionY] = currentPlayer;
+    }
+
+    private char getCurrentPlayerToBePlayed() {
+        return currentPlayer == 'X' ? 'O' : 'X';
     }
 
     public char getPlayerAt(final int positionX, final int positionY) {
