@@ -8,7 +8,7 @@ public class TicTacToeGame {
         checkIsPositionAlreadyFilled(positionX, positionY);
         currentPlayer = getCurrentPlayerToBePlayed();
         gameBoardLayout[positionX][positionY] = currentPlayer;
-        for (int row = 0; row < 2; row++) {
+        for (int row = 0; row < 3; row++) {
             if ((getPlayerAt(row, 0) == 'X') &&
                     (getPlayerAt(row, 0) == getPlayerAt(row, 1)) &&
                     (getPlayerAt(row, 0) == getPlayerAt(row, 2))) {
