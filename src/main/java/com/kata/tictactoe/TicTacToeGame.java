@@ -11,29 +11,15 @@ public class TicTacToeGame {
         if (isCurrentPlayerWinnerByRow()) {
             return "Player " + currentPlayer + " is the Winner";
         }
-        if (isXWinnerByColumn()) {
-            return "Player X is the Winner";
-        }
-        if (isOWinnerByColumn()) {
-            return "Player O is the Winner";
+        if (isCurrentPlayerWinnerByColumn()) {
+            return "Player " + currentPlayer + " is the Winner";
         }
         return null;
     }
 
-    private boolean isOWinnerByColumn() {
+    private boolean isCurrentPlayerWinnerByColumn() {
         for (int column = 0; column < 3; column++) {
-            if ((getPlayerAt(0, column) == 'O') &&
-                    (getPlayerAt(0, column) == getPlayerAt(1, column)) &&
-                    (getPlayerAt(0, column) == getPlayerAt(2, column))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean isXWinnerByColumn() {
-        for (int column = 0; column < 3; column++) {
-            if ((getPlayerAt(0, column) == 'X') &&
+            if ((getPlayerAt(0, column) == currentPlayer) &&
                     (getPlayerAt(0, column) == getPlayerAt(1, column)) &&
                     (getPlayerAt(0, column) == getPlayerAt(2, column))) {
                 return true;
