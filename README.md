@@ -32,3 +32,6 @@ Using JAVA as the base and  Maven to handle the dependencies, following the appr
 	- Declaring Player X is winner when first row is filled with 3 'X' tokens.
 	- Declaring Player X is winner when second row is filled with 3 'X' tokens.
 	- Declaring Player X is winner when third row is filled with 3 'X' tokens.
+	- Declaring Player O is winner when first row is filled with 3 'O' tokens.
+	- Declaring Player O is winner when second row is filled with 3 'O' tokens.
+	- Declaring Player O is winner when third row is filled with 3 'O' tokens.
