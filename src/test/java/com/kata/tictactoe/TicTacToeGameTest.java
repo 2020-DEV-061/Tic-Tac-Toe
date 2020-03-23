@@ -15,14 +15,14 @@ public class TicTacToeGameTest {
     }
 
     @Test
-    public void getPlayerAtShouldReturnXWhenFirstTurnIsPlayed() {
+    public void getPlayerAtShouldReturnXWhenFirstTurnIsPlayed() throws PositionAlreadyInUseException {
         TicTacToeGame ticTacToeGame = new TicTacToeGame();
         ticTacToeGame.playTurnAt(0, 0);
         assertEquals('X', ticTacToeGame.getPlayerAt(0, 0));
     }
 
     @Test
-    public void getPlayerAtShouldReturnOWhenSecondTurnIsPlayed() {
+    public void getPlayerAtShouldReturnOWhenSecondTurnIsPlayed() throws PositionAlreadyInUseException {
         TicTacToeGame ticTacToeGame = new TicTacToeGame();
         ticTacToeGame.playTurnAt(0, 0);
         ticTacToeGame.playTurnAt(0, 1);
@@ -30,10 +30,16 @@ public class TicTacToeGameTest {
     }
 
     @Test
-    public void getPlayerAtShouldReturnXWhenThirdTurnIsPlayed() {
-        ticTacToeGame.playTurnAt(0,0);
-        ticTacToeGame.playTurnAt(0,1);
-        ticTacToeGame.playTurnAt(0,2);
-        assertEquals('X', ticTacToeGame.getPlayerAt(0,2));
+    public void getPlayerAtShouldReturnXWhenThirdTurnIsPlayed() throws PositionAlreadyInUseException {
+        ticTacToeGame.playTurnAt(0, 0);
+        ticTacToeGame.playTurnAt(0, 1);
+        ticTacToeGame.playTurnAt(0, 2);
+        assertEquals('X', ticTacToeGame.getPlayerAt(0, 2));
+    }
+
+    @Test(expected = PositionAlreadyInUseException.class)
+    public void playTurnAtShouldThrowPositionAlreadyFilledExceptionWhenPlayingAtAUsedPosition() throws PositionAlreadyInUseException {
+        ticTacToeGame.playTurnAt(0, 0);
+        ticTacToeGame.playTurnAt(0, 0);
     }
 }
