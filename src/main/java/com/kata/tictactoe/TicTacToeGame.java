@@ -14,12 +14,16 @@ public class TicTacToeGame {
         if (isCurrentPlayerWinnerByColumn()) {
             return "Player " + currentPlayer + " is the Winner";
         }
-        if ((getPlayerAt(0, 0) == currentPlayer) &&
-                (getPlayerAt(0, 0) == getPlayerAt(1, 1)) &&
-                (getPlayerAt(0, 0) == (getPlayerAt(2, 2)))) {
+        if (isCurrentPlayerWinnerByLeftToRightDiagonal()) {
             return "Player " + currentPlayer + " is the Winner";
         }
         return null;
+    }
+
+    private boolean isCurrentPlayerWinnerByLeftToRightDiagonal() {
+        return (getPlayerAt(0, 0) == currentPlayer) &&
+                (getPlayerAt(0, 0) == getPlayerAt(1, 1)) &&
+                (getPlayerAt(0, 0) == (getPlayerAt(2, 2)));
     }
 
     private boolean isCurrentPlayerWinnerByColumn() {
