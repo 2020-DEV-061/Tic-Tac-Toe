@@ -41,3 +41,5 @@ Using JAVA as the base and  Maven to handle the dependencies, following the appr
     - Declaring Player O is winner when first column is filled with 3 'O' tokens.
     - Declaring Player O is winner when second column is filled with 3 'O' tokens.
     - Declaring Player O is winner when third column is filled with 3 'O' tokens.
+    - Declaring Player X is winner when Left to Right Diagonal is filled with 3 'X' tokens.
+    - Declaring Player O is winner when Left to Right Diagonal is filled with 3 'O' tokens.
