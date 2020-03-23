@@ -11,14 +11,21 @@ public class TicTacToeGame {
         if (isCurrentPlayerWinnerByRow()) {
             return "Player " + currentPlayer + " is the Winner";
         }
+        if (isXWinnerByColumn()) {
+            return "Player X is the Winner";
+        }
+        return null;
+    }
+
+    private boolean isXWinnerByColumn() {
         for (int column = 0; column < 3; column++) {
             if ((getPlayerAt(0, column) == 'X') &&
                     (getPlayerAt(0, column) == getPlayerAt(1, column)) &&
                     (getPlayerAt(0, column) == getPlayerAt(2, column))) {
-                return "Player X is the Winner";
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
     private boolean isCurrentPlayerWinnerByRow() {
