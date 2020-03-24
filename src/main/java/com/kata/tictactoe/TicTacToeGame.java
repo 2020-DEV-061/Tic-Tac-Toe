@@ -66,8 +66,8 @@ class TicTacToeGame {
     private boolean isCurrentPlayerWinnerByColumn() {
         for (int column = FIRST_POSITION; column < 3; column++) {
             if ((getPlayerAt(FIRST_POSITION, column) == currentPlayer) &&
-                    (getPlayerAt(FIRST_POSITION, column) == getPlayerAt(SECOND_POSITION, column)) &&
-                    (getPlayerAt(FIRST_POSITION, column) == getPlayerAt(THIRD_POSITION, column))) {
+                    (getPlayerAt(SECOND_POSITION, column) == currentPlayer) &&
+                    (getPlayerAt(THIRD_POSITION, column) == currentPlayer)) {
                 return true;
             }
         }
