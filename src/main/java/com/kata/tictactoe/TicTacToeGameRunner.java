@@ -6,14 +6,14 @@ import java.util.logging.Logger;
 import static java.util.logging.Level.INFO;
 
 public class TicTacToeGameRunner {
-    private static final Logger logger = Logger.getLogger(TicTacToeGameRunner.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(TicTacToeGameRunner.class.getName());
 
     public static void main(String[] args) throws PositionAlreadyInUseException, PositionOutOfGridException {
         TicTacToeGameRunner gameRunner = new TicTacToeGameRunner();
         TicTacToeGame ticTacToeGame = new TicTacToeGame();
         String gameResult = playTicToeToe(ticTacToeGame);
         gameRunner.drawGameBoard(ticTacToeGame);
-        logger.log(INFO, gameResult);
+        LOGGER.log(INFO, gameResult);
     }
 
     private static String playTicToeToe(final TicTacToeGame ticTacToeGame) throws PositionAlreadyInUseException, PositionOutOfGridException {
@@ -22,7 +22,7 @@ public class TicTacToeGameRunner {
         Scanner sc = new Scanner(System.in);
         String gameResult = null;
         while (null == gameResult) {
-            logger.log(INFO, "Enter the Coordinates X and Y for the chance to be played at: ");
+            LOGGER.log(INFO, "Enter the Coordinates X and Y for the chance to be played at: ");
             positionX = sc.nextInt();
             positionY = sc.nextInt();
             gameResult = ticTacToeGame.playTurnAt(positionX, positionY);
@@ -42,7 +42,7 @@ public class TicTacToeGameRunner {
             }
             appendBreakForNextLine(gameLayoutDisplay, row);
         }
-        logger.log(INFO, gameLayoutDisplay.toString());
+        LOGGER.log(INFO, gameLayoutDisplay.toString());
     }
 
     private void appendBreakForNextLine(final StringBuilder gameLayoutDisplay, final int row) {
