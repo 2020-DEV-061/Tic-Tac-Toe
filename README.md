@@ -43,3 +43,6 @@ Using JAVA as the base and  Maven to handle the dependencies, following the appr
     - Declaring Player O is winner when third column is filled with 3 'O' tokens.
     - Declaring Player X is winner when Left to Right Diagonal is filled with 3 'X' tokens.
     - Declaring Player O is winner when Left to Right Diagonal is filled with 3 'O' tokens.
+    - Declaring Player X is winner when Right to Left Diagonal is filled with 3 'X' tokens.
+    - Declaring Player O is winner when Right to Left Diagonal is filled with 3 'O' tokens.
+    - Declaring Game is a Draw when 9 chances are played and there are no tokens filled 3 in a row.
