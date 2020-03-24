@@ -11,12 +11,10 @@ public class TicTacToeGameRunner {
     public static void main(String[] args) throws PositionAlreadyInUseException, PositionOutOfGridException {
         TicTacToeGameRunner gameRunner = new TicTacToeGameRunner();
         TicTacToeGame ticTacToeGame = new TicTacToeGame();
-        String gameResult = playTicToeToe(ticTacToeGame);
-        gameRunner.drawGameBoard(ticTacToeGame);
-        LOGGER.log(INFO, gameResult);
+        gameRunner.playTicToeToe(ticTacToeGame);
     }
 
-    private static String playTicToeToe(final TicTacToeGame ticTacToeGame) throws PositionAlreadyInUseException, PositionOutOfGridException {
+    private void playTicToeToe(final TicTacToeGame ticTacToeGame) throws PositionAlreadyInUseException, PositionOutOfGridException {
         int positionX;
         int positionY;
         Scanner sc = new Scanner(System.in);
@@ -26,8 +24,10 @@ public class TicTacToeGameRunner {
             positionX = sc.nextInt();
             positionY = sc.nextInt();
             gameResult = ticTacToeGame.playTurnAt(positionX, positionY);
+            this.drawGameBoard(ticTacToeGame);
         }
-        return gameResult;
+        LOGGER.log(INFO, gameResult);
+
     }
 
     private void drawGameBoard(final TicTacToeGame ticTacToeGame) {
