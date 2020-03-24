@@ -58,9 +58,9 @@ class TicTacToeGame {
     }
 
     private boolean isCurrentPlayerWinnerByLeftToRightDiagonal() {
-        return (getPlayerAt(FIRST_POSITION, FIRST_POSITION) == currentPlayer) &&
-                (getPlayerAt(FIRST_POSITION, FIRST_POSITION) == getPlayerAt(SECOND_POSITION, SECOND_POSITION)) &&
-                (getPlayerAt(FIRST_POSITION, FIRST_POSITION) == (getPlayerAt(THIRD_POSITION, THIRD_POSITION)));
+        return ((getPlayerAt(FIRST_POSITION, FIRST_POSITION) == currentPlayer) &&
+                (getPlayerAt(SECOND_POSITION, SECOND_POSITION) == currentPlayer) &&
+                (getPlayerAt(THIRD_POSITION, THIRD_POSITION) == currentPlayer));
     }
 
     private boolean isCurrentPlayerWinnerByColumn() {
