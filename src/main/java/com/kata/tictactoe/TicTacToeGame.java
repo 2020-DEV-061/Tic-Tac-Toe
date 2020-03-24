@@ -35,9 +35,13 @@ class TicTacToeGame {
     }
 
     private void checkIsPositionOutOfGameBoardGrid(int positionX, int positionY) throws PositionOutOfGridException {
-        if (positionX < FIRST_POSITION || positionY < FIRST_POSITION || positionX > THIRD_POSITION || positionY > THIRD_POSITION) {
+        if (isPositionOutOfGameBoardGrid(positionX, positionY)) {
             throw new PositionOutOfGridException();
         }
+    }
+
+    private boolean isPositionOutOfGameBoardGrid(int positionX, int positionY) {
+        return ((positionX < FIRST_POSITION) || (positionY < FIRST_POSITION) || (positionX > THIRD_POSITION) || (positionY > THIRD_POSITION));
     }
 
     private boolean isGameDraw() {
