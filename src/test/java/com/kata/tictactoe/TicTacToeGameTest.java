@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class TicTacToeGameTest {
 
@@ -229,5 +230,10 @@ public class TicTacToeGameTest {
     @Test(expected = PositionOutOfGridException.class)
     public void playTurnAtShouldPositionOutOfGridExceptionWhenPositionEnteredIsBeyondGameBoardSize() throws PositionAlreadyInUseException, PositionOutOfGridException {
         ticTacToeGame.playTurnAt(8, 0);
+    }
+
+    @Test
+    public void getGameBoardShouldReturnTheTicTacToeGameBoard(){
+        assertNotNull(ticTacToeGame.getGameBoard());
     }
 }
