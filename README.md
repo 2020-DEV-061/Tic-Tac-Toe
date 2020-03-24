@@ -46,3 +46,20 @@ Using JAVA as the base and  Maven to handle the dependencies, following the appr
     - Declaring Player X is winner when Right to Left Diagonal is filled with 3 'X' tokens.
     - Declaring Player O is winner when Right to Left Diagonal is filled with 3 'O' tokens.
     - Declaring Game is a Draw when 9 chances are played and there are no tokens filled 3 in a row.
+    
+## Prerequisites
+
+To run this program below software needs to be installed
+
+    1. Java - Version 1.6 or above
+    2. Maven - For Dependency management
+    3. JUnit - Version 4.13 (added dependency in pom.xml)
+    4. Intellij - Any IDE which supports Java
+
+## How to run the unit test cases using Intellij
+
+    Download project as zip file and unzip the same to a folder. 
+    In Intellij Go to 
+    File -> New -> select Project from Existing sources -> Next -> Browse extracted folder -> select the pom.xml and will search for maven projects.
+    Once Project is checked out -> Right click project in Project Explorer window and select Run All Tests
+    Once above steps done All the test cases will be executed and the results will be displayed in the RUN console.
