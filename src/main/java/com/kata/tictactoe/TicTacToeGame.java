@@ -1,7 +1,13 @@
 package com.kata.tictactoe;
 
 public class TicTacToeGame {
-    private char[][] gameBoardLayout = new char[3][3];
+    public static final int MAX_GRID_SIZE = 3;
+    public static final int FIRST_POSITION = 0;
+    public static final int SECOND_POSITION = 1;
+    public static final int THIRD_POSITION = 2;
+    public static final char PLAYER_X = 'X';
+    public static final char PLAYER_O = 'O';
+    private char[][] gameBoardLayout = new char[MAX_GRID_SIZE][MAX_GRID_SIZE];
     private char currentPlayer;
     private int totalTurnsPlayed;
 
@@ -25,7 +31,7 @@ public class TicTacToeGame {
     }
 
     private void checkIsPositionOutOfGameBoardGrid(int positionX, int positionY) throws PositionOutOfGridException {
-        if (positionX < 0 || positionY < 0 || positionX > 2 || positionY > 2) {
+        if (positionX < FIRST_POSITION || positionY < FIRST_POSITION || positionX > THIRD_POSITION || positionY > THIRD_POSITION) {
             throw new PositionOutOfGridException();
         }
     }
@@ -42,22 +48,22 @@ public class TicTacToeGame {
     }
 
     private boolean isCurrentPlayerWinnerByRightToLeftDiagonal() {
-        return (getPlayerAt(0, 2) == currentPlayer) &&
-                (getPlayerAt(0, 2) == getPlayerAt(1, 1)) &&
-                (getPlayerAt(0, 2) == (getPlayerAt(2, 0)));
+        return (getPlayerAt(FIRST_POSITION, THIRD_POSITION) == currentPlayer) &&
+                (getPlayerAt(FIRST_POSITION, THIRD_POSITION) == getPlayerAt(SECOND_POSITION, SECOND_POSITION)) &&
+                (getPlayerAt(FIRST_POSITION, THIRD_POSITION) == (getPlayerAt(THIRD_POSITION, FIRST_POSITION)));
     }
 
     private boolean isCurrentPlayerWinnerByLeftToRightDiagonal() {
-        return (getPlayerAt(0, 0) == currentPlayer) &&
-                (getPlayerAt(0, 0) == getPlayerAt(1, 1)) &&
-                (getPlayerAt(0, 0) == (getPlayerAt(2, 2)));
+        return (getPlayerAt(FIRST_POSITION, FIRST_POSITION) == currentPlayer) &&
+                (getPlayerAt(FIRST_POSITION, FIRST_POSITION) == getPlayerAt(SECOND_POSITION, SECOND_POSITION)) &&
+                (getPlayerAt(FIRST_POSITION, FIRST_POSITION) == (getPlayerAt(THIRD_POSITION, THIRD_POSITION)));
     }
 
     private boolean isCurrentPlayerWinnerByColumn() {
-        for (int column = 0; column < 3; column++) {
-            if ((getPlayerAt(0, column) == currentPlayer) &&
-                    (getPlayerAt(0, column) == getPlayerAt(1, column)) &&
-                    (getPlayerAt(0, column) == getPlayerAt(2, column))) {
+        for (int column = FIRST_POSITION; column < 3; column++) {
+            if ((getPlayerAt(FIRST_POSITION, column) == currentPlayer) &&
+                    (getPlayerAt(FIRST_POSITION, column) == getPlayerAt(SECOND_POSITION, column)) &&
+                    (getPlayerAt(FIRST_POSITION, column) == getPlayerAt(THIRD_POSITION, column))) {
                 return true;
             }
         }
@@ -65,10 +71,10 @@ public class TicTacToeGame {
     }
 
     private boolean isCurrentPlayerWinnerByRow() {
-        for (int row = 0; row < 3; row++) {
-            if ((getPlayerAt(row, 0) == currentPlayer) &&
-                    (getPlayerAt(row, 0) == getPlayerAt(row, 1)) &&
-                    (getPlayerAt(row, 0) == getPlayerAt(row, 2))) {
+        for (int row = FIRST_POSITION; row < 3; row++) {
+            if ((getPlayerAt(row, FIRST_POSITION) == currentPlayer) &&
+                    (getPlayerAt(row, FIRST_POSITION) == getPlayerAt(row, SECOND_POSITION)) &&
+                    (getPlayerAt(row, FIRST_POSITION) == getPlayerAt(row, THIRD_POSITION))) {
                 return true;
             }
         }
@@ -82,7 +88,7 @@ public class TicTacToeGame {
     }
 
     private char getCurrentPlayerToBePlayed() {
-        return currentPlayer == 'X' ? 'O' : 'X';
+        return currentPlayer == PLAYER_X ? PLAYER_O : PLAYER_X;
     }
 
     public char getPlayerAt(final int positionX, final int positionY) {
