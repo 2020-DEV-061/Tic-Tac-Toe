@@ -7,14 +7,14 @@ class TicTacToeGame {
     public static final int THIRD_POSITION = 2;
     public static final char PLAYER_X = 'X';
     public static final char PLAYER_O = 'O';
-    private char[][] gameBoardLayout = new char[MAX_GRID_SIZE][MAX_GRID_SIZE];
+    private char[][] gameBoard = new char[MAX_GRID_SIZE][MAX_GRID_SIZE];
     private char currentPlayer;
     private int totalTurnsPlayed;
 
     public String playTurnAt(final int positionX, final int positionY) throws PositionAlreadyInUseException, PositionOutOfGridException {
         validatePosition(positionX, positionY);
         currentPlayer = getCurrentPlayerToBePlayed();
-        gameBoardLayout[positionX][positionY] = currentPlayer;
+        gameBoard[positionX][positionY] = currentPlayer;
         totalTurnsPlayed++;
         if (isCurrentPlayerWinner()) {
             return ("Player " + currentPlayer + " is the Winner");
@@ -82,7 +82,7 @@ class TicTacToeGame {
     }
 
     private void checkIsPositionAlreadyFilled(final int positionX, final int positionY) throws PositionAlreadyInUseException {
-        if (gameBoardLayout[positionX][positionY] != '\0') {
+        if (gameBoard[positionX][positionY] != '\0') {
             throw new PositionAlreadyInUseException(positionX, positionY);
         }
     }
@@ -92,6 +92,6 @@ class TicTacToeGame {
     }
 
     char getPlayerAt(final int positionX, final int positionY) {
-        return gameBoardLayout[positionX][positionY];
+        return gameBoard[positionX][positionY];
     }
 }
