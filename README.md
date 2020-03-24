@@ -85,9 +85,10 @@ To run this program below software needs to be installed
 
 ## How to run the Application using the Runner Class in Intellij
 
-    After Importing the project into Intellij, Run the TicTacToeGameRunner.javq class (can be found in src->main->java->com.kata.tictactoe)
-    It will ask for Postion to be played at (x and y) : Enter 2 integer valuer one-by-one
-    continue the above step till the result is reached (Win/Draw)
+    After Importing the project into Intellij, Run the TicTacToeGameRunner.java class (can be found in src->main->java->com.kata.tictactoe)
+    The Application will ask for the Postion to be played at (x and y) : Enter 2 integer valuer one-by-one (Enter value for X, Press Return, Then Enter value for Y)
+    Continue the above step till the result is reached (Win/Draw)
+    Note: Valid Input Values for the coordinates: {0,1,2}
 
  ![Runner Sample Output](https://i.postimg.cc/gkYBW5Zg/runner-Output.png)   
 
@@ -96,7 +97,7 @@ To run this program below software needs to be installed
 ## Code Coverage Using JaCoCo
 
     JaCoCo maven plugin is used for generating the code coverage, please find below the code coverage for the TicTacToe Game.
-            Note: Test cases are not covered for the Runner class.
+    Note: Test cases are not covered for the Runner class.
 
  ![Code Coverage](https://i.postimg.cc/y8Mz4cMn/code-Coverage.png)
 
