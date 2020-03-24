@@ -6,8 +6,7 @@ public class TicTacToeGame {
     private int totalTurnsPlayed;
 
     public String playTurnAt(final int positionX, final int positionY) throws PositionAlreadyInUseException, PositionOutOfGridException {
-        checkIsPositionOutOfGameBoardGrid(positionX, positionY);
-        checkIsPositionAlreadyFilled(positionX, positionY);
+        validatePosition(positionX, positionY);
         currentPlayer = getCurrentPlayerToBePlayed();
         gameBoardLayout[positionX][positionY] = currentPlayer;
         totalTurnsPlayed++;
@@ -18,6 +17,11 @@ public class TicTacToeGame {
             return "It is a Draw";
         }
         return null;
+    }
+
+    private void validatePosition(int positionX, int positionY) throws PositionOutOfGridException, PositionAlreadyInUseException {
+        checkIsPositionOutOfGameBoardGrid(positionX, positionY);
+        checkIsPositionAlreadyFilled(positionX, positionY);
     }
 
     private void checkIsPositionOutOfGameBoardGrid(int positionX, int positionY) throws PositionOutOfGridException {
