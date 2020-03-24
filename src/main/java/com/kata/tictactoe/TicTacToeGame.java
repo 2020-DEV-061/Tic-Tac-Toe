@@ -1,21 +1,21 @@
 package com.kata.tictactoe;
 
 class TicTacToeGame {
-    public static final int MAX_GRID_SIZE = 3;
-    public static final int FIRST_POSITION = 0;
-    public static final int SECOND_POSITION = 1;
-    public static final int THIRD_POSITION = 2;
-    public static final char PLAYER_X = 'X';
-    public static final char PLAYER_O = 'O';
+    private static final int MAX_GRID_SIZE = 3;
+    private static final int FIRST_POSITION = 0;
+    private static final int SECOND_POSITION = 1;
+    private static final int THIRD_POSITION = 2;
+    private static final char PLAYER_X = 'X';
+    private static final char PLAYER_O = 'O';
     private char[][] gameBoard = new char[MAX_GRID_SIZE][MAX_GRID_SIZE];
     private char currentPlayer;
     private int totalTurnsPlayed;
 
-    public char[][] getGameBoard() {
+    char[][] getGameBoard() {
         return gameBoard;
     }
 
-    public String playTurnAt(final int positionX, final int positionY) throws PositionAlreadyInUseException, PositionOutOfGridException {
+    String playTurnAt(final int positionX, final int positionY) throws PositionAlreadyInUseException, PositionOutOfGridException {
         validatePosition(positionX, positionY);
         currentPlayer = getCurrentPlayerToBePlayed();
         gameBoard[positionX][positionY] = currentPlayer;
