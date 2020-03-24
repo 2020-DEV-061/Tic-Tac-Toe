@@ -96,9 +96,9 @@ To run this program below software needs to be installed
 ## Code Coverage Using JaCoCo
 
     JaCoCo maven plugin is used for generating the code coverage, please find below the code coverage for the TicTacToe Game.
-        Note: Test cases written for only the TicTacToeGame class, and not for the exception and runner class.
+            Note: Test cases are not covered for the Runner class.
 
- ![Code Coverage](https://i.postimg.cc/hP4SG4QR/code-Coverage.png)
+ ![Code Coverage](https://i.postimg.cc/y8Mz4cMn/code-Coverage.png)
 
 
 
