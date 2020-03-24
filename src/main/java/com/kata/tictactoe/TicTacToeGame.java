@@ -1,6 +1,6 @@
 package com.kata.tictactoe;
 
-public class TicTacToeGame {
+class TicTacToeGame {
     public static final int MAX_GRID_SIZE = 3;
     public static final int FIRST_POSITION = 0;
     public static final int SECOND_POSITION = 1;
@@ -91,7 +91,7 @@ public class TicTacToeGame {
         return currentPlayer == PLAYER_X ? PLAYER_O : PLAYER_X;
     }
 
-    public char getPlayerAt(final int positionX, final int positionY) {
+    char getPlayerAt(final int positionX, final int positionY) {
         return gameBoardLayout[positionX][positionY];
     }
 }
